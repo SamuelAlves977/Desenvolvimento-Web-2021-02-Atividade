@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+    <title>Document</title>
+</head>
+<body>
+    <div>Escreva código com JSX, diretamente em uma página HTML, para calcular a média ponderada de três notas.</div>
+    <!--<div>
+        <ul>
+            nota 1: <input type="text" id="nota1" name="nota1" value=""><br><br>
+            nota 2: <input type="text" id="nota2" name="nota2" value=""><br><br>
+            nota 3: <input type="text" id="nota3" name="nota3" value=""><br>
+        </ul>
+    </div>
+    -->
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = document.getElementById('root');
+
+        //pesos para cada nota
+        var peso1 = 3;
+        var peso2 = 3;
+        var peso3 = 4;
+        var somaDosPesos = ((peso1 + peso2) + peso3);
+        
+        function Ponderada(nota1,nota2,nota3){
+            nota1 = nota1;
+            nota2 = nota2;
+            nota3 = nota3;
+            //soma dos pesos atribuidos
+            var notaFinal = parseFloat(((((nota1*peso1) + nota2 * peso2) + nota3 * peso3) / somaDosPesos));
+            var result = document.getElementById("root");
+            if (result.textContent === undefined) {
+                return result.textContent = String(0);
+            } else { // IE
+                return result.innerText = String(notaFinal);
+            }
+
+          // var result = document.getElementById("Resultado");
+           //return parseFloat(notaFinal);
+        }
+        //passando os valores para a função e mostrando o resultado na página HTML
+        ReactDOM.render(<h3>Nota ponderada: {Ponderada(5,5,5)}</h3>,root);
+    </script>
+</body>
+</html>

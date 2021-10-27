@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 - questão 3</title>
+</head>
+<body>
+    <div>
+        3) Crie uma classe chamada "FuncionarioComissionado" com ES6, que herdará os métodos da classe "Funcionario". 
+        A classe "Funcionario" deve ter os seguintes métodos: constructor(nome, numCTPS, salario)e mostrarDados() 
+        para  retornar  todos  os  dados  de  um funcionário. A classe "FuncionarioComissionado" deve ter os seguintes métodos:
+        constructor(nome, numCTPS, salario, venda, comissao) e mostrarDados() para retornar todos os dados de um funcionário comissionado. 
+        Em seguida, crie um objeto de cada uma das classes e mostre os respectivos dados no browser.
+    </div><br><br>
+    <script>
+        class Funcionario{
+            constructor(nome, numCTPS, salario){
+                this.nomeFuncionario = nome;
+                this.numCTPSFuncionario = numCTPS;
+                this.salarioFuncionario = salario;
+            }
+            mostrarDados(){
+                return  'Nome: ' + this.nomeFuncionario + '<br>' + 'Número CTPS: ' + this.numCTPSFuncionario + '<br>'+'Salário: ' + this.salarioFuncionario + '<br>';
+            }
+        }
+        class FuncionarioComissionado extends Funcionario {
+            constructor(nome, numCTPS, salario, venda, comissao){
+                super(nome,numCTPS,salario);
+                this.vendafuncCom = venda;
+                this.comissaofuncCom = comissao;
+            }
+            mostrarComissionado(){
+                return this.mostrarDados() + 'Venda: ' + this.vendafuncCom + '<br>' + 'Comissão: ' + this.comissaofuncCom;
+            }
+        }
+        //intanciando a classe Funcionario e mostrando seu dados
+        funcionario1 = new Funcionario("Tom wolf", 1254, 5000);
+        document.write('Dados da classe Funcionario!' + '<br><br>'+ funcionario1.mostrarDados());
+
+        //instânciando a classe FuncionarioComissionado
+        funcComiss1 = new FuncionarioComissionado("Teodoro", 123456, 3000, 5, 200);
+        document.write('<br><br>' + 'Dados da classe FuncionarioComissionado!' + '<br><br>' + funcComiss1.mostrarComissionado());
+    </script>
+</body>
+</html>

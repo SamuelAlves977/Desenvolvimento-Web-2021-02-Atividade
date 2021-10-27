@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+    <title>Questão 6</title>
+</head>
+<body>
+    <div>
+        6) Escreva código com JSX, diretamente em uma página HTML, para calcular a soma dos quadrados de três números inteiros.
+    </div>
+    <div id="root"></div>
+    <script>
+        function somaDosQuadrado() {
+            var num1 = +prompt("Valor 1: ");
+            var num2 = +prompt("Valor 2: ");
+            var num3 = +prompt("Valor 3: ");
+
+            var num1Quadrado = Math.pow(num1,2);
+            var num2Quadrado = Math.pow(num2,2);
+            var num3Quadrado = Math.pow(num3,2);
+
+            document.write(`
+                ${"<br/>"} Valores inseridos: ${"<br/>"}
+                Valor: ${num1} ^ 2 = ${num1Quadrado}${"<br/>"}
+                Valor: ${num2} ^ 2 = ${num2Quadrado}${"<br/>"}
+                Valor: ${num3} ^ 2 = ${num3Quadrado}${"<br/>"}
+                Resultado da soma dos Quadrados: ${"<b>"} ${(num1Quadrado + num2Quadrado + num3Quadrado)}       
+            `)
+        }
+        ReactDOM.render(somaDosQuadrado(), document.getElementById('root'));
+    </script>
+</body>
+</html>

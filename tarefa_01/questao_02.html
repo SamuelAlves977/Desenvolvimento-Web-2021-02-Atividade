@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 - questão 2</title>
+</head>
+<body>
+    <div>
+        2) Escreva código com ES6 diretamente em uma página HTML para criar uma classe chamada "Carro", 
+        que deve ter os seguintes métodos: constructor(nome,  ano) e mostrarIdade(). 
+        Em seguida, crie um objeto dessa classe e mostre a seguinte mensagem no browser: O meucarro tem <mostrar a idade do carro>anos.
+        Por exemplo: O meu carro tem 3 anos.<br><br>
+    </div>
+    <script>
+        class Carro{
+            constructor (nome,ano){
+                this.nome = nome;
+                this.ano = ano  
+            }
+            mostrarIdade(){
+                var anoAtual = new Date()
+                var idade = anoAtual.getFullYear() - this.ano ;
+                return 'O meu carro tem ' + idade + ' anos.'; 
+            }
+        }
+        meuCarro = new Carro("Dodge Challenger R/T",2000);
+        document.write('Modelo: ' + meuCarro.nome + '<br> ano: ' + meuCarro.ano + '<br>');
+        document.write(meuCarro.mostrarIdade());
+    </script>
+</body>
+</html>

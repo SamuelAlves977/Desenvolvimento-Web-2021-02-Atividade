@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 - questão 4</title>
+</head>
+<body>
+    <div>
+        Crie uma classe chamada "Quadrado"com ES6,que herdará os métodos da classe "Poligono". 
+        A classe "Poligono" deve ter os seguintes métodos: constructor(altura, largura) e mostrarNome() 
+        para  retornar a  seguinte  mensagem: Olá,  eu  sou  um  Polígono. 
+        A  classe "Quadrado"  deve  ter  os  seguintes  métodos: constructor(comprimento)e get area().  
+        Em seguida, crie um objeto de cada uma das classes e, no final,
+        mostre as seguintes mensagens no browser: Olá, eu sou um Polígono. 
+        Olá, eu sou um Quadrado. A área do quadrado é: <mostrar o respectivo valor>.
+    </div><br><br>
+    <script>
+        class Poligono{
+            constructor(altura, largura){
+                this.altura = altura;
+                this.largura = largura;
+            }
+
+            mostrarNome(){
+                return 'Olá eu sou um Polígono.<br>';
+            }
+        }
+
+        class Quadrado extends Poligono {
+            constructor(altura,comprimento){
+                super(altura)
+                this.comprimento = comprimento;
+            }
+
+            get area() {
+                if((this.comprimento * this.altura) %4 === 0){
+                    return 'Olá eu sou um quadrado!!<br>A area do quadrado é: ' + this.comprimento * this.altura;
+                }
+                return 'Eu não sou um Quadrado :(';
+            }
+        }
+
+        firstPoligono = new Poligono(5,5);
+        document.write(firstPoligono.mostrarNome());
+
+        firstQuadrado = new Quadrado(11,13);
+        document.write(firstQuadrado.area);
+    </script>
+</body>
+</html>

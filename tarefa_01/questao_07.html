@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 1 - questão 7</title>
+</head>
+<body>
+    <div>
+        Faça uma função anônima com ES6, armazenada na variável descobrirDiametro, 
+        que receba o parâmetro  "raio"  e  imprima  a  seguinte  mensagem  no browser:
+        O  diâmetro  é: <mostrar  o respectivo valor>.
+    </div>
+    <p id="demo"></p>
+    <script>
+        descobrirDiametro = function(raio){
+            return 'O diâmetro é: '+ (raio * 2);
+        }
+        document.getElementById('demo').innerHTML = descobrirDiametro(35);
+    </script>
+</body>
+</html>

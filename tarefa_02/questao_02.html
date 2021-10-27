@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+</head>
+<body>
+    <div>2)Escreva código com JSX, diretamente em uma página HTML, para calcular o quadrado de um número.</div>
+    <div id="root"></div>
+    <script type="text/babel">
+        const root = document.getElementById('root');
+
+        var val = parseInt(prompt("valor: "));
+
+        function quadradoDoValor(valor){
+            var valorAoQuadrado = Math.pow(valor, 2);
+            return valorAoQuadrado;
+        }
+        
+        ReactDOM.render(<h3>O valor de {val}^2 é: {quadradoDoValor(val)}</h3>,root);
+    </script>    
+</body>
+</html>
